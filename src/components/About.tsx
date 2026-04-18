@@ -144,4 +144,8 @@ export default function About() {
       </div>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 071ff47b9993ddda542c09440ba808495bb9822c

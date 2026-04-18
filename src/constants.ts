@@ -221,4 +221,8 @@ export const CODING_PROFILES = [
     link: "https://leetcode.com/u/premisreepriya/",
     icon: Terminal
   }
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> 071ff47b9993ddda542c09440ba808495bb9822c
