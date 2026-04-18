@@ -13,7 +13,7 @@ const highlightKeywords = (text: string) => {
     const newParts: any[] = [];
     parts.forEach(part => {
       if (part && typeof part === 'string') {
-       const regex = new RegExp(`(${keyword})`, 'gi');
+        const regex = new RegExp(`(${keyword})`, 'gi');
         const split = part.split(regex);
         newParts.push(...split);
       } else {
@@ -76,6 +76,7 @@ export default function About() {
         <SectionTitle title="About Me" center />
         
         <div className="grid lg:grid-cols-3 gap-8 items-stretch mt-10">
+          
           {/* About Me Box */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -84,7 +85,6 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-2 bg-[#0a0f1e] border border-white/5 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden group"
           >
-            {/* Subtle gradient glow */}
             <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 blur-[100px] rounded-full group-hover:bg-primary/15 transition-colors" />
             <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full group-hover:bg-secondary/15 transition-colors" />
 
@@ -96,7 +96,6 @@ export default function About() {
               ))}
             </div>
             
-            {/* Decorative corner accent */}
             <div className="absolute top-0 left-0 w-1.5 h-0 bg-gradient-to-b from-primary/60 to-secondary/60 group-hover:h-full transition-all duration-1000" />
           </motion.div>
 
@@ -111,8 +110,8 @@ export default function About() {
             <div className="bg-[#0f172a] border border-slate-800 rounded-[16px] p-8 shadow-2xl relative overflow-hidden h-full flex flex-col">
               <div className="relative z-10">
                 <p className="text-teal-400 font-bold mb-8 leading-relaxed">
-  CODING PROFILE
-</p>
+                  CODING PROFILE
+                </p>
                 
                 <div className="flex flex-col gap-4">
                   {codingProfiles.map((profile) => (
@@ -136,16 +135,12 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Background glow */}
               <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-secondary/5 blur-[80px] rounded-full" />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 071ff47b9993ddda542c09440ba808495bb9822c

@@ -6,18 +6,21 @@ import SectionTitle from './SectionTitle';
 export default function Achievements() {
   const [selectedCategory, setSelectedCategory] = useState<'achievement' | 'activity'>('achievement');
 
-  const filteredItems = ACHIEVEMENTS.filter(item => item.category === selectedCategory);
+  const filteredItems = ACHIEVEMENTS.filter(
+    (item) => item.category === selectedCategory
+  );
 
   return (
     <section id="achievements" className="py-24 px-6 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
         <SectionTitle title="Achievements & Activities" center />
-        
+
+        {/* Toggle Buttons */}
         <div className="flex justify-center gap-4 mb-12">
-          {['achievement', 'activity'].map((cat) => (
+          {(['achievement', 'activity'] as const).map((cat) => (
             <button
               key={cat}
-              onClick={() => setSelectedCategory(cat as 'achievement' | 'activity')}
+              onClick={() => setSelectedCategory(cat)}
               className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
                 selectedCategory === cat
                   ? 'text-white bg-gradient-to-r from-indigo-600 to-blue-600 shadow-[0_0_20px_rgba(79,70,229,0.4)]'
@@ -28,7 +31,8 @@ export default function Achievements() {
             </button>
           ))}
         </div>
-        
+
+        {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((achievement, idx) => (
@@ -41,47 +45,44 @@ export default function Achievements() {
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
                 className="glass-card rounded-2xl overflow-hidden group hover:border-primary/30 transition-all"
               >
-              <div className="relative h-64 overflow-hidden">
-               <img 
-  src={achievement.image} 
-  alt={achievement.title} 
-  className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${
-    achievement.imageFit === "contain"
-      ? "object-contain bg-black"
-      : "object-cover"
-  }`}
-  referrerPolicy="no-referrer"
-/>
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent" />
-               
-              </div>
-              
-              <div className="p-6">
-               <h3 className="text-xl font-display font-bold text-white mb-2">
-  {achievement.title}
-</h3>
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={achievement.image}
+                    alt={achievement.title}
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${
+                      achievement.imageFit === "contain"
+                        ? "object-contain bg-black"
+                        : "object-cover"
+                    }`}
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent" />
+                </div>
 
-{achievement.organization && (
-  <p className="text-cyan-400 text-base font-semibold mb-2">
-    {achievement.organization}
-  </p>
-)}
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-display font-bold text-white mb-2">
+                    {achievement.title}
+                  </h3>
 
-{achievement.description && (
-  <p className="text-slate-400 text-base leading-relaxed">
-    {achievement.description}
-  </p>
-)}
-              </div>
-            </motion.div>
-          ))}
+                  {achievement.organization && (
+                    <p className="text-cyan-400 text-base font-semibold mb-2">
+                      {achievement.organization}
+                    </p>
+                  )}
+
+                  {achievement.description && (
+                    <p className="text-slate-400 text-base leading-relaxed">
+                      {achievement.description}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </AnimatePresence>
         </div>
       </div>
     </section>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 071ff47b9993ddda542c09440ba808495bb9822c

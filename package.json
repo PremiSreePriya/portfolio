@@ -28,13 +28,8 @@
     "@types/node": "^22.14.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-<<<<<<< HEAD
-    "autoprefixer": "^10.5.0",
-    "postcss": "^8.5.10",
-=======
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.8",
->>>>>>> 071ff47b9993ddda542c09440ba808495bb9822c
     "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",
